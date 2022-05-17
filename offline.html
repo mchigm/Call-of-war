@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>You are offline</title>
+
+    <!-- Inline the page's stylesheet. -->
+    <style>
+      body {
+        font-family: helvetica, arial, sans-serif;
+        margin: 2em;
+      }
+
+      h1 {
+        font-style: italic;
+        color: #373fff;
+      }
+
+      p {
+        margin-block: 1rem;
+      }
+
+      button {
+        display: block;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>Opps, looks like something's wrong</h1>
+
+    <p>Click the button below to try reloading.</p>
+    <p><button type="button">⤾ Reload</button></p>
+    <h1>OR:</h1>
+    <p><a href="mailto:bnbpythoninc@gmail.com;"><button type="button">Or click me to contact the Blodge support!</button></a></p>
+    <h1>OR:</h1>
+    <form action="/action_page.php">
+      <p><input type="text" vol="error">say something to the BnBpython support!</input></p>
+      <input type="submit" vol="error"></input>
+    </form>
+    <!-- Inline the page's JavaScript file. -->
+    <script>
+      // Manual reload feature.
+      document.querySelector("button").addEventListener("click", () => {
+        window.location.reload();
+      });
+
+      // Listen to changes in the network state, reload when online.
+      // This handles the case when the device is completely offline.
+      window.addEventListener('online', () => {
+        window.location.reload();
+      });
+
+      // Check if the server is responding and reload the page if it is.
+      // This handles the case when the device is online, but the server
+      // is offline or misbehaving.
+      async function checkNetworkAndReload() {
+        try {
+          const response = await fetch('.');
+          // Verify we get a valid response from the server
+          if (response.status >= 200 && response.status < 500) {
+            window.location.reload();
+            return;
+          }
+        } catch {
+          // Unable to connect to the server, ignore.
+        }
+        window.setTimeout(checkNetworkAndReload, 2500);
+      }
+
+      checkNetworkAndReload();
+    </script>
+  </body>
+</html>

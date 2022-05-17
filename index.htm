@@ -1,8 +1,96 @@
+<!DOCTYPE htm>
 <html>
   <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <link href="decoration.css" rel="stylesheet" type="text/css" />
+    <link href="decorationindexhtm.css" rel="stylesheet" type="text/css" />
     <title>PHP Test</title>
   </head>
   <body>
-    
+    <style>
+      .game {
+      background-color: #eee;
+      color: #444;
+      cursor: pointer;
+      padding: 18px;
+      width: 100%;
+      border: none;
+      text-align: left;
+      outline: none;
+      font-size: 15px;
+      }
+      .active, .game:hover {
+        background-color: #ccc;
+      }
+      .content {
+        padding: 0 18px;
+        display: none;
+        overflow: hidden;
+        background-color: #f1f1f1;
+      }
+    </style>
+    <button type="button" class="game">Open Call of war (need to connect gmail with your call of war account or use your username and password)</button>
+    <div class="content">
+      <iframe src="https://www.callofwar.com" height = "400" width = "800"></iframe>
+    </div>
+    <script>
+      var coll = document.getElementsByClassName("game");
+      var i;
+      for (i = 0; i < coll.length; i++) {
+        coll[i].addEventListener("click", function() {
+          this.classList.toggle("active");
+          var content = this.nextElementSibling;
+          if (content.style.display === "block") {
+            content.style.display = "none";
+          } else {
+            content.style.display = "block";
+          }
+        });
+      }
+    </script>
+    <p>click here for random memes(including rickroll)</p>
+    <button class="pm">randomize!</button>
+<!--<p id = "meme">results here!</p> -->
+    <script>
+      var playmeme = document.getElementsByClassName("pm");
+      playmeme.addEventListener("click", function(){
+        this.classList.toggle("active");
+        var x = Math.floor(Math.random() * 6);
+        if (x = 1){
+          const myWindow = window.open();
+          const myWindow.document.open();
+          const myWindow.document.write("<video id="myVideo" width="320" height="176"><source src="A-10.mp4" type="video/mp4">  Your browser does not support HTML5 video.</video>");
+          const myWindow.document.close();
+        }
+        if (x = 2){
+          const myWindow = window.open();
+          const myWindow.document.open();
+          const myWindow.document.write("<video id="myVideo" width="320" height="176"><source src="Bert_.mp4" type="video/mp4">  Your browser does not support HTML5 video.</video>");
+          const myWindow.document.close();
+        }
+        if (x = 3){
+          const myWindow = window.open();
+          const myWindow.document.open();
+          const myWindow.document.write("<video id="myVideo" width="320" height="176"><source src="No_breathing!!!.mp4" type="video/mp4">  Your browser does not support HTML5 video.</video>");
+          const myWindow.document.close();
+        }
+        if (x = 4){
+          const myWindow = window.open();
+          const myWindow.document.open();
+          const myWindow.document.write("<video id="myVideo" width="320" height="176"><source src="Not_welcome_to_Brazil.mp4" type="video/mp4">  Your browser does not support HTML5 video.</video>");
+          const myWindow.document.close();
+        }
+        if (x = 5){
+          const myWindow = window.open();
+          const myWindow.document.open();
+          const myWindow.document.write("<video id="myVideo" width="320" height="176"><source src="normalvideo.mp4" type="video/mp4">  Your browser does not support HTML5 video.</video>");
+          const myWindow.document.close();
+        }
+      });
+ //document.getElementById("meme").innerHTML = result;
+      })
+    </script>
   </body>
 </html>
+<script src="code.jsx"></script>
