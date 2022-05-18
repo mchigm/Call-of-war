@@ -8,11 +8,14 @@
   </head>
   <body>
     <h1>Call of war </h1>
-    <p class = "link">ver: ALPHA0.00.1</p>
+    <a>ver: ALPHA0.00.1<a>
     <p> . . </p>
     <p>this website may not work for opera
     <div class="popup" onclick="popup()">Update log: ()
     <span class="popuptext" id="myPopup">from here you can see the updates! (style = Updatelog: (updatestatus, updatever, [patch])</span>
+    <p>
+      <a download = "add your own website">click to add it to your own website!</a>
+    </p>
     <script>
       function popup() {
       var popup = document.getElementById("myPopup");
@@ -24,6 +27,83 @@
     <p></p>
     <p><iframe src = "support.php" height="455" width="1500"></iframe></p>
     <p><iframe src = "index.htm" height="800" width="800"></iframe></p>
+    <p></p>
+    <style>
+      {box-sizing: border-box;}
+      .form-container textarea:focus {
+        background-color: #ddd;
+        outline: none;
+      }
+      .form-container .btn {
+        background-color: #04AA6D;
+        color: white;
+        padding: 16px 20px;
+        border: none;
+        cursor: pointer;
+        width: 100%;
+        margin-bottom:10px;
+        opacity: 0.8;
+      }
+      .form-container .btn:hover, .open-button:hover {
+        opacity: 1;
+      }
+      .open-button {
+        background-color: #555;
+        color: white;
+        padding: 16px 20px;
+        border: none;
+        cursor: pointer;
+        opacity: 0.8;
+        position: fixed;
+        bottom: 23px;
+        right: 28px;
+        width: 280px;
+      }
+      .form-container .cancel {
+        background-color: red;
+      }
+      .form-popup {
+        display: none;
+        position: fixed;
+        bottom: 0;
+        right: 15px;
+        border: 3px solid #f1f1f1;
+        z-index: 9;
+      }
+      .form-container {
+        max-width: 300px;
+        padding: 10px;
+        background-color: white;
+      }
+      .form-container textarea {
+        width: 100%;
+        padding: 15px;
+        margin: 5px 0 22px 0;
+        border: none;
+        background: #f1f1f1;
+        resize: none;
+        min-height: 200px;
+      }
+    </style>
+    <div class="chat-popup" id="myForm">
+      <form action="/action_page.php" class="form-container">
+        <h1>send some feedbacks!</h1>
+        Name: <input type="text" name="name"><br>
+        <label for="msg"><b>Message</b></label>
+        <textarea placeholder="Type message.." name="msg" required></textarea>
+        <button type="submit" class="btn">Send</button>
+        <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
+      </form>
+    </div>
+    <script>
+      function openForm() {
+        document.getElementById("myForm").style.display = "block";
+      }
+
+      function closeForm() {
+        document.getElementById("myForm").style.display = "none";
+      }
+    </script>
   </body>
 </html>
 <script src="code.jsx"></script>
