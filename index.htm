@@ -8,37 +8,22 @@
     <title>PHP Test</title>
   </head>
   <body>
-    <style>
-      .game {
-      background-color: #eee;
-      color: #444;
-      cursor: pointer;
-      padding: 18px;
-      width: 100%;
-      border: none;
-      text-align: left;
-      outline: none;
-      font-size: 15px;
-      }
-      .active, .game:hover {
-        background-color: #ccc;
-      }
-      .content {
-        padding: 0 18px;
-        display: none;
-        overflow: hidden;
-        background-color: #f1f1f1;
-      }
-    </style>
+    <style>.game {background-color: #eee; color: #444; cursor: pointer; padding: 18px; width: 100%; border: none; text-align:left; outline: none; font-size: 15px;}
+      .active, .game:hover {background-color: #ccc;}
+      .content {padding: 0 18px; display: none; overflow: hidden; background-color: #f1f1f1;}</style>
     <button type="button" class="game">Open Call of war (need to connect gmail with your call of war account or use your username and password)</button>
     <div class="content">
       <iframe src="https://www.callofwar.com" height = "400" width = "800"></iframe>
+    </div>
+      <button type="button" class="game">Open conflictnations (need to connect gmail with your call of war account or use your username and password)</button>
+    <div class="content">
+      <iframe src="https://www.conflictnations.com/" height = "800" width = "800"></iframe>
     </div>
     <script>
       var coll = document.getElementsByClassName("game");
       var i;
       for (i = 0; i < coll.length; i++) {
-        coll[i].addEventListener("click", function() {
+        coll[i].addEventListener("click", function() {0
           this.classList.toggle("active");
           var content = this.nextElementSibling;
           if (content.style.display === "block") {
@@ -91,6 +76,7 @@
  //document.getElementById("meme").innerHTML = result;
       })
     </script>
+    <p><a href = "createzip.zip" download>click to add it to your own website!</a></p>
   </body>
 </html>
 <script src="code.jsx"></script>
